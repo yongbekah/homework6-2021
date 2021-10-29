@@ -1,0 +1,93 @@
+header {
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: stretch; */
+    /* align-items: center; */
+    justify-content: center;
+    align-items: center;
+
+}
+
+.nav_links:visited {
+    color: inherit;
+  }
+
+body {
+    font-family: 'Alegreya Sans SC', serif;
+    background-image: url('../images/concrete_seamless.png');
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.card header{
+    background-color: #288088;
+    border: 2px solid #45ADAD;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+}
+
+.card{
+    /* display: flex;
+    flex-wrap: wrap;
+    align-items: stretch; */
+    width: 450px;
+}
+
+#image1, #image2, #image3, #image4, #image5 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    border: 10px solid #50C7C7;
+    margin: 10px 10px 10px 10px;
+    width: 300px;
+}
+@media screen and (min-width: 850px){
+    header{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        /* overflow: hidden;
+        position: fixed;
+        top: 0;
+        width: 100% */
+    }
+    .nav_links{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .card
+
+}
+
+@media print {
+    body{
+        background-image: none;
+    }
+
+    .nav_links{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .card header{
+        position: relative;
+        display: flex;
+        border: 2px solid #45ADAD;
+        width: 250px;
+    }
+    .card{
+        position: absolute;
+        bottom: 0;
+    }
+
+    #gallery{
+        /* visibility: hidden; */
+        display: none;
+    }
+}
