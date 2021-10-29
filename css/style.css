@@ -22,7 +22,8 @@ body {
 }
 
 .card header{
-    background-color: #288088;
+    z-index: 10;
+    background: #288088;
     border: 2px solid #45ADAD;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -30,51 +31,82 @@ body {
     border-top-left-radius: 7px;
 }
 
-.card{
+.card, .card_big{
     /* display: flex;
     flex-wrap: wrap;
     align-items: stretch; */
-    width: 450px;
+    flex-basis: 450px;
 }
 
-#image1, #image2, #image3, #image4, #image5 {
+.gallery {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    align-items: stretch;
+}
+
+.gallery img{
     border: 10px solid #50C7C7;
     margin: 10px 10px 10px 10px;
     width: 300px;
 }
+
+@keyframes logo_animate{
+    0% {width: 50px; opacity: 0;}
+    100% {width: 425px; opacity: 1;}
+}
+
+#logo {
+    animation: logo_animate 5s none;
+}
+
 @media screen and (min-width: 850px){
     header{
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: row;
         justify-content: space-between;
-        /* overflow: hidden;
-        position: fixed;
+        position: sticky;
         top: 0;
-        width: 100% */
     }
     .nav_links{
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: row;
         justify-content: space-between;
     }
 
-    .card
+    .card{
+        flex-basis: 250px;
+    }
 
+}
+@media (prefers-reduced-motion) {
+    #logo{
+        animation: none;
+    }
 }
 
 @media print {
     body{
         background-image: none;
     }
+    
+    nav{
+        width: 100%;
+    }
 
     .nav_links{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
+    
+    .pricing{
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: nowrap;
+        flex-flow: row;
+    }
+
     .card header{
         position: relative;
         display: flex;
